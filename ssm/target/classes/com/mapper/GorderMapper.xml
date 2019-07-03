@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zh.mapper.GorderMapper">
+
+    <select id="queryAll" resultType="com.zh.pojo.Gorder">
+        SELECT * FROM gorder
+    </select>
+
+    <select id="queryBygId" resultType="com.zh.pojo.Gorder">
+        SELECT * FROM  gorder
+        <where>
+            <if test="goid != null and goid != ''">
+                AND id LIKE concat('%',#{goid},'%')
+            </if>
+        </where>
+    </select>
+
+    <delete id="delete">
+        delete FROM gorder where id=#{goid}
+
+    </delete>
+
+    <insert id="saveGorder" parameterType="com.zh.pojo.Gorder">
+        INSERT INTO
+        gorder(totalprice,uid,status,fee,amount)
+        VALUE
+        (#{totalprice},#{uid},#{status},#{fee},#{amount})
+    </insert>
+
+    <update id="updateGorder" parameterType="com.zh.pojo.Gorder">
+        UPDATE gorder SET
+        totalprice=#{totalprice},uid=#{uid},status=#{status},fee=#{fee},amount=#{amount}
+        where id =#{id}
+    </update>
+
+    <select id="findGorderById" parameterType="int" resultType="com.zh.pojo.Gorder">
+        SELECT * FROM gorder
+        WHERE id = #{id}
+    </select>
+
+</mapper>
