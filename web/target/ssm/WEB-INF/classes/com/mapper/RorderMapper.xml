@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zh.mapper.RorderMapper">
+
+    <select id="queryAll" resultType="com.zh.pojo.Rorder">
+        SELECT * FROM rorder
+    </select>
+
+    <select id="queryByrId" resultType="com.zh.pojo.Rorder">
+        SELECT * FROM  rorder
+        <where>
+            <if test="roid != null and roid != ''">
+                AND id LIKE concat('%',#{roid},'%')
+            </if>
+        </where>
+    </select>
+
+    <delete id="delete">
+        delete FROM rorder where id=#{roid}
+
+    </delete>
+
+    <insert id="saveRorder" parameterType="com.zh.pojo.Rorder">
+        INSERT INTO
+        rorder (totalprice,uid,status,startime,endtime,starcity,endcity,tool)
+        VALUE
+        (#{totalprice},#{uid},#{status},#{startime},#{endtime},#{starcity},#{endcity},#{tool})
+    </insert>
+
+    <update id="updateRorder" parameterType="com.zh.pojo.Rorder">
+        UPDATE rorder SET
+        totalprice=#{totalprice},uid=#{uid},status=#{status},startime=#{startime},endtime=#{endtime},starcity=#{starcity},
+        endcity=#{endcity},tool=#{tool}
+        WHERE id = #{id}
+    </update>
+    <select id="findRorderById" parameterType="int" resultType="com.zh.pojo.Rorder">
+        SELECT * FROM rorder
+        where id =#{id}
+    </select>
+
+    <insert id="ConsumeraddRorder" parameterType="com.zh.pojo.Rorder">
+        INSERT INTO
+        rorder (totalprice,uid,startime,endtime,starcity,endcity,tool)
+        VALUE
+        (#{totalprice},#{uid},#{startime},#{endtime},#{starcity},#{endcity},#{tool})
+    </insert>
+
+    <select id="findRorderByUid"  parameterType="String" resultType="com.zh.pojo.Rorder">
+        select totalprice,status,startime,endtime,starcity,endcity,tool,id
+        from rorder
+        where uid=#{_parameter}
+    </select>
+</mapper>

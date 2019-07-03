@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zh.mapper.RouteMapper">
+
+    <select id="queryAll" resultType="com.zh.pojo.Route">
+        SELECT * FROM route
+    </select>
+
+    <select id="queryByRadd" resultType="com.zh.pojo.Route">
+        SELECT * FROM  route
+        <where>
+            <if test="Radd != null and Radd != ''">
+                AND Radd LIKE concat('%',#{Radd},'%')
+            </if>
+        </where>
+    </select>
+
+    <delete id="delete">
+        delete FROM route where Rid=#{Rid}
+
+    </delete>
+
+    <insert id="saveRoute" parameterType="com.zh.pojo.Route">
+        INSERT INTO
+        route (Radd,Rmoney,Rdetail,Rimg,Rtype)
+        VALUE
+        (#{Radd},#{Rmoney},#{Rdetail},#{Rimg},#{Rtype})
+    </insert>
+
+    <update id="updateRoute" parameterType="com.zh.pojo.Route">
+        UPDATE route SET
+        Radd=#{Radd},Rmoney=#{Rmoney},Rdetail=#{Rdetail},Rtype=#{Rtype}
+        WHERE Rid = #{Rid}
+    </update>
+
+    <select id="findRouteById" parameterType="int" resultType="com.zh.pojo.Route">
+        SELECT * FROM route
+        WHERE Rid=#{Rid}
+    </select>
+
+
+</mapper>
