@@ -1,0 +1,10 @@
+<!--pages/choose/end/end.wxml-->
+<view >
+<image class='top' src="/images/test2.jpg"></image>
+</view>
+ <view class='add_btn'>
+    <button  class ='btn' bindtap="formSubmit1" >提交订单</button>
+    </view>
+
+
+    

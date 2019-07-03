@@ -1,0 +1,51 @@
+<!--pages/choose/choose.wxml-->
+<form  bindreset="formReset">
+  <view class="section section_gap">
+    <view class="section__title">请选择你想要去的景点</view>
+    <checkbox-group name="checkbox">
+      <label class='checkbox'><checkbox value="checkbox1"/>洪崖洞</label>
+      <text>\n</text>
+      <label class='checkbox'><checkbox value="checkbox2"/>重庆南滨路夜景</label>
+      <text>\n</text>
+      <label class='checkbox'><checkbox value="checkbox3"/>长江索道</label>
+      <text>\n</text>
+      <label class='checkbox'><checkbox value="checkbox4"/>磁器口</label>
+      <text>\n</text>
+      <label class='checkbox'><checkbox value="checkbox5"/>民国影视一条街</label>
+      <text>\n</text>
+      <label class='checkbox'><checkbox value="checkbox6"/>奥陶纪</label>
+      <text>\n</text>
+      <label class='checkbox'><checkbox value="checkbox7"/>李子坝站</label>
+      <text>\n</text>
+      <label class='checkbox'><checkbox value="checkbox8"/>长江三峡</label>
+      <text>\n</text>
+      <label class='checkbox'><checkbox value="checkbox9"/>万盛老街</label>
+      <text>\n</text>
+      <label class='checkbox'><checkbox value="checkbox10"/>皇冠大扶梯</label>
+      <text>\n</text>
+    </checkbox-group>
+    <button>点击显示更多</button>
+  </view>
+  <text>\n\n\n\n\n\n\n\n</text>
+  <view class="btn-area">
+  <view class='add_btn'>
+    <button  class ='btn' bindtap="submit" formType="submit">提交</button>
+    <button class ='btn' formType="reset">取消</button>
+    </view>
+  </view>
+</form>
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modalDlg" wx:if="{{showModal}}">
+    <text>\n组团审核\n</text>
+
+    <radio-group >
+    1.是否玩夜场<text decode="{{true}}">&emsp;</text><radio>是</radio>
+                <radio>否</radio>
+    </radio-group>
+    <radio-group >
+    2.是否为大学生<text decode="{{true}}">&emsp;</text><radio>是</radio>
+                <radio>否</radio>
+    </radio-group>
+    <button bindtap="go"  bindtap="formSubmit">完成</button>
+</view>
+

@@ -1,0 +1,41 @@
+<!--pages/shop/shop.wxml-->
+<view class='indexcontainer'>
+  <!-- 顶部推荐图片轮播 -->
+  <view >
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}" wx:key="*this">
+          <swiper-item> 
+            <image src="{{item}}" class="slide-image" mode='scaleToFill' />
+          </swiper-item>
+        </block>
+    </swiper>
+  </view>
+  <!-- 第二部分-->
+ <view class='selection'>
+    <!-- 头部文字 -->
+    <view class="header">
+      <text style='margin-left: 5px;'>商品</text>
+      <text class='all'>推荐</text>
+    </view>
+    <!-- 内容 -->
+    <view class='content'>
+      <view class='content-item' wx:for="{{contentImgUrls}}" wx:key="url" wx:for-item="item">
+        <!-- 图片 -->
+        <image src="{{item.url}}" class="slide-image" mode='scaleToFill'/>
+        <!-- 图片上的文字说明 -->
+        <view class='content-item-title'>
+          <text>{{item.title}}</text>
+          
+        </view>
+      </view>
+    </view>
+  </view>
+  </view>
+<view 
+bindtap='adddetial'>
+<image class="add_icon"
+src="/images/test.png"></image>
+</view>
+<view class="round-click">
+   <navigator url='/pages/sos/sos' > 110</navigator >
+</view>

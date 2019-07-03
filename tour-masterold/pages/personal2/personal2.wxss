@@ -1,0 +1,5 @@
+/* pages/personal2/parsonal2.wxss */
+.top{
+   width: 100%;
+  height: 1300rpx;
+}

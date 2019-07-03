@@ -1,0 +1,29 @@
+<!--pages/sos/sos.wxml-->
+
+<view class='main'>
+ <button class='btn1' open-type='openSetting'>
+    <image class='btnImg' src='/images/police.jpg'></image>
+    <view>报警电话：110</view>
+ </button>
+
+
+
+ <button class='btn1' open-type='openSetting'>
+    <image class='btnImg' src='/images/kefu.jpg'></image>
+    <view>客服电话：888888</view>
+ </button>
+
+
+
+ <button class='btn1' open-type='openSetting'>
+    <image class='btnImg' src='/images/emerged.png'></image>
+    <view>紧急联系人电话：111111</view>
+ </button>
+
+
+ 
+ <button class='btn1' open-type='openSetting'>
+    <image class='btnImg' ></image>
+    <view>更多</view>
+ </button>
+ </view>

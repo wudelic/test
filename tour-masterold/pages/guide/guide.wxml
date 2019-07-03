@@ -1,0 +1,11 @@
+<!--pages/guide/guide.wxml-->
+<view >
+<image class='top' src="/images/daoyou.jpg"></image>
+</view>
+
+<view class="btn-area">
+  <view class='add_btn'>
+    <button  class ='btn' bindtap="outTap" formType="submit">提交</button>
+    <button class ='btn' formType="reset">取消</button>
+    </view>
+  </view>

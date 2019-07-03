@@ -1,0 +1,127 @@
+<view class='main'>
+<checkbox-group>
+<label><checkbox value="1"/>观星    </label>
+<label><checkbox value="2"/>红色文化</label>
+<label><checkbox value="3"/>京剧文化</label>
+<label><checkbox value="4"/>茶文化  </label>
+<label><checkbox value="5"/>电影    </label>
+<label><checkbox value="6"/>特色小吃</label>
+<label><checkbox value="7"/>亲子游</label>
+<label><checkbox value="8"/>动漫体验</label>
+<view class='add_btn'>
+<button class="btn">更多</button>
+</view>
+</checkbox-group>
+</view>
+
+<view class="tui-picker-content"> 
+ <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange"
+  value="{{multiIndex11}}" range="{{multiArray11}}">
+   <view class="picker tui-picker-detail"> 选择省份：{{multiArray11[0][multiIndex11[0]]}} - {{multiArray11[1][multiIndex11[1]]}} </view>
+    </picker> 
+    </view>
+    <!--3级
+<view >
+<view class="tui-picker-content">
+  <view></view>
+  <picker bindchange="ChangeRegin" mode="region" value="{{region}}">
+    <view class="tui-picker-detail">选择省份 ：{{region[0]}} - {{region[1]}}</view>
+  </picker>
+</view>
+-->
+
+<view class="tui-picker-content">
+  <picker  bindchange="ChangeDate"  mode="date" value="{{date}}" start="2019-05-01" end="2020-05-01">
+    <view class="tui-picker-detail">
+    日期 ： {{date}} 
+    </view>
+  </picker>
+</view>
+
+<view class="tui-picker-content">
+  <picker  mode = "multiSelector" value="{{multiIndex3}}" range="{{multiArray3}}" bindchange="ChangeMultiPicker3">
+    <view class="tui-picker-detail">
+      出行天数 ：{{multiArray3[0][multiIndex3[0]]}}
+      </view>
+  </picker>
+</view>
+
+<view class="tui-picker-content"> 
+  <picker  mode = "multiSelector" value="{{multiIndex4}}" range="{{multiArray4}}" bindchange="ChangeMultiPicker4">
+    <view class="tui-picker-detail">
+     出行工具 ： {{multiArray4[0][multiIndex4[0]]}}
+      </view>
+  </picker>
+</view>
+
+<view class="tui-picker-content">
+  <picker  mode = "multiSelector" value="{{multiIndex2}}" range="{{multiArray2}}" bindchange="ChangeMultiPicker2">
+    <view class="tui-picker-detail">
+     出行人数 ： {{multiArray2[0][multiIndex2[0]]}}
+      </view>
+  </picker>
+</view>
+
+
+
+
+<view class="section section_gap">
+    <view class="section__title">其他：</view>
+    <radio-group >
+    是否需要导游<text decode="{{true}}">&emsp;&emsp;</text><radio >是</radio>
+              <radio >否</radio>
+    </radio-group>
+    <radio-group >
+    是否需要旅行社<text decode="{{true}}">&emsp;</text><radio>是</radio>
+                <radio>否</radio>
+    </radio-group>
+    <radio-group >
+    是否需要住宿<text decode="{{true}}">&emsp;&emsp;</text><radio>是</radio>
+                <radio>否</radio>
+    </radio-group>
+
+
+    <view class='cot'>
+    <view>成人<text decode="{{true}}" space="{{true}}">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;</text></view>
+        <view class="stepper" >  
+    <!-- 减号 --> 
+    <text class="{{minusStatus}}" bindtap="bindMinus">-</text>  
+    <!-- 数值 -->  
+    <input type="number" bindchange="bindManual" value="{{num}}" />  
+    <!-- 加号 -->  
+    <text class="normal" bindtap="bindPlus">+</text>  
+</view> 
+    </view>
+
+      <view class='cot'>
+    <view>儿童（2-12岁）<text decode="{{true}}" space="{{true}}">&emsp;&nbsp;</text></view>
+        <view class="stepper">  
+    <!-- 减号 --> 
+    <text class="{{minusStatus2}}" bindtap="bindMinus2">-</text>  
+    <!-- 数值 -->  
+    <input type="number" bindchange="bindManual2" value="{{num2}}" />  
+    <!-- 加号 -->  
+    <text class="normal" bindtap="bindPlus2">+</text>  
+</view> 
+    </view>
+
+      <view class='cot'>
+    <view>婴幼儿（2岁以下）</view>
+        <view class="stepper">  
+    <!-- 减号 --> 
+    <text class="{{minusStatus3}}" bindtap="bindMinus3">-</text>  
+    <!-- 数值 -->  
+    <input type="number" bindchange="bindManual3" value="{{num3}}" />  
+    <!-- 加号 -->  
+    <text class="normal" bindtap="bindPlus3">+</text>  
+</view> 
+    </view>
+
+  </view>
+
+
+  <view class="container">
+  <view class="add_btn" bindtap="outTap">
+   <button class="btn">确定提交</button>
+  </view>
+</view>

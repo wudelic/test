@@ -1,0 +1,5 @@
+<!--pages/personal2/parsonal2.wxml-->
+<view >
+<image class='top' src="/images/personal2.jpg"></image>
+</view>
+

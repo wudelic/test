@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/destination/destination",
+    "pages/destination/cityView/cityView",
+    "pages/index/view-detail/view-detail",
+    "pages/find/find",
+    "pages/personal/personal",
+    "pages/personal/modify-info/modify-info",
+    "pages/index/view-list/view-list",
+    "pages/destination/regions/region",
+    "pages/choose/choose",
+    "pages/shop/shop",
+    "pages/choose/end/end",
+    "pages/hudong/hudong",
+    "pages/personal2/personal2",
+    "pages/choose/end1/end1",
+    "pages/sos/sos",
+    "pages/guide/guide",
+    "pages/guide/end/end"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": " #98d361",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "position": "bottom",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/navbar/home.png",
+        "selectedIconPath": "/images/navbar/home_active.png"
+      },
+      {
+        "pagePath": "pages/destination/destination",
+        "text": "DIY旅游",
+        "iconPath": "/images/navbar/my.png",
+        "selectedIconPath": "/images/navbar/my_active.png"
+      },
+      {
+        "pagePath": "pages/hudong/hudong",
+        "text": "互动社区",
+        "iconPath": "/images/navbar/shequ.png",
+        "selectedIconPath": "/images/navbar/destination_active.png"
+      },
+      {
+        "pagePath": "pages/shop/shop",
+        "text": "袋鼠商场",
+        "iconPath": "/images/navbar/find.png",
+        "selectedIconPath": "/images/navbar/find_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

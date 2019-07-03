@@ -1,0 +1,12 @@
+<!--pages/hudong/hudong.wxml-->
+<view >
+<image class='top' src="/images/hudong.jpg"></image>
+</view>
+<view 
+bindtap='adddetial'>
+<image class="add_icon"
+src="/images/test.png"></image>
+</view>
+<view class="round-click">
+   <navigator url='/pages/sos/sos' > 110</navigator >
+</view>
